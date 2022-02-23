@@ -28,8 +28,8 @@ export default new Vuex.Store({
 			} else {
 				state.cart.push(product)
 			}
-
 		},
+
 		REMOVE_FROM_CARD: (state, index) => {
 			state.cart.splice(index, 1)
 		},
@@ -57,25 +57,31 @@ export default new Vuex.Store({
 					return error;
 				})
 		},
+
 		ADD_TO_CART({ commit }, product) {
 			commit('SET_CART', product);
 		},
+
 		DECREMENT_CART_ITEM({ commit }, index) {
 			commit('DECREMENT', index)
 		},
+
 		INCREMENT_CART_ITEM({ commit }, index) {
 			commit('INCREMENT', index)
 		},
+
 		DELETE_FROM_CART({ commit }, index) {
 			commit('REMOVE_FROM_CARD', index)
 		},
 	},
+
 	modules: {
 	},
 	getters: {
 		PRODUCTS(state) {
 			return state.products;
 		},
+		
 		CART(state) {
 			return state.cart;
 		}
