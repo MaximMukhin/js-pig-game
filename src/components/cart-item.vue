@@ -8,9 +8,14 @@
         <p>Цена: {{cartItemData.price}}</p>
      </div>
      <div class="cart-item__quantity">
-        <p>Количество {{cartItemData.quantity}}</p>
+        <p>Количество</p>
+        <span>
+           <span class="quantity__btn" @click="decrementItem">-</span>
+           {{cartItemData.quantity}}
+           <span class="quantity__btn" @click="incrementItem">+</span>
+           </span>
         </div>
-     <button class="cart-item__delete-btn" @click="deleteFromCartItem">Delete</button>
+     <button class="cart-item__delete-btn" @click="deleteFromCartItem">Удалить</button>
   </div>
 </template>
 
@@ -32,7 +37,14 @@ export default {
    methods: {
       deleteFromCartItem() {
          this.$emit('deleteFromCartItem')
-      }
+      },
+      decrementItem() {
+         this.$emit('decrement')
+      },
+      incrementItem() {
+         this.$emit('increment')
+      },
+
    },
    mounted() {},
 }
@@ -77,5 +89,8 @@ export default {
   border: 1px solid rgb(204,204,204);
   background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
   box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+}
+.quantity__btn {
+   cursor: pointer;
 }
 </style>

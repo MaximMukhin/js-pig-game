@@ -38,6 +38,7 @@ export default {
    max-width: 1280;
    margin: 0 auto;
    font-size: 20px;
+   color: rgb(26, 26, 26);
 }
 
 p {
