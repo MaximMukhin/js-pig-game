@@ -45,7 +45,8 @@ export default {
 <style>
 .catalog-item {
    flex-basis: 25%;
-   box-shadow: 0 0 8px 0 #c5c5c5;
+   box-shadow: 0 0 8px 0 #a1a1a1;
+   border-radius: 5px;
    padding: 8px;
    margin-bottom: 8px;
 }
