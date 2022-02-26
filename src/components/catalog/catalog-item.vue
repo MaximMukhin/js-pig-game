@@ -1,6 +1,6 @@
 <template>
    <div class="catalog-item">
-      <img class="catalog-item__image" :src=" require('../assets/images/' + productData.image)" alt="img">
+      <img class="catalog-item__image" :src=" require('../../assets/images/' + productData.image)" alt="img">
       <p class="catalog-item__name">{{productData.name}}</p>
       <p class="catalog-item__color">{{productData.color}}</p>
       <p class="catalog-item__price">Цена: {{productData.price}} руб.</p>
