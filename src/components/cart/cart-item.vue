@@ -57,6 +57,7 @@ export default {
    justify-content: space-between;
    align-items: center;
    box-shadow: 0 0 8px 0 #c5c5c5;
+   border-radius: 5px;
    padding: 8px;
    margin-bottom: 8px;
 }
