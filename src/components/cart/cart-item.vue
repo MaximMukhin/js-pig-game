@@ -5,7 +5,8 @@
         <p>{{cartItemData.name}}</p>
         <p>Артикул: {{cartItemData.article}}</p>
         <p>Цвет: {{cartItemData.color}}</p>
-        <p>Цена: {{cartItemData.price}}</p>
+        <p>Цена: {{cartItemData.price}} руб</p>
+        <p>Всего: {{sumCartItem}} руб</p>
      </div>
      <div class="cart-item__quantity">
         <p>Количество</p>
@@ -33,7 +34,11 @@ export default {
    data() {
       return {}
    },
-   computed: {},
+   computed: {
+          sumCartItem() {
+      return this.cartItemData.price * this.cartItemData.quantity
+      },
+   },
    methods: {
       deleteFromCartItem() {
          this.$emit('deleteFromCartItem')
@@ -51,6 +56,10 @@ export default {
 </script>
 
 <style>
+
+p {
+   margin: 0 10px 0 10px;
+}
 .cart-item {
    display: flex;
    flex-wrap: nowrap;
