@@ -23,7 +23,7 @@
    export default {
       name: "select",
       props: {
-         option: {
+         options: {
             type: Array,
             default() {
                return [];
@@ -65,9 +65,11 @@
 
 <style>
 .select {
-   position: relative;
-   width: 200px;
-   cursor: pointer;
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+    text-align: left;
+    bottom: 10px;
 }
 
 .select p {
@@ -75,15 +77,18 @@
 }
 
 .select__title {
-   border: solid 1px #aeaeae;
+    border: solid 1px #aeaeae;
+    padding: 8px;
 }
 
 .select__option {
-   border: solid 1px #aeaeae;
-   position: absolute;
-   top: 30px;
-   right: 0;
-   width: 100%;
+    border: solid 1px #aeaeae;
+    background: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    padding: 8px;
 }
 
 .select__option p:hover {

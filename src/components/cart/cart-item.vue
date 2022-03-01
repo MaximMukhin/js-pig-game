@@ -61,6 +61,7 @@ p {
    margin: 0 10px 0 10px;
 }
 .cart-item {
+   font-size: 12px;
    display: flex;
    flex-wrap: nowrap;
    justify-content: space-between;
@@ -76,7 +77,7 @@ p {
 .cart-item__delete-btn {
   display: inline-block;
   font-family: arial,sans-serif;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   color: rgb(68,68,68);
   text-decoration: none;

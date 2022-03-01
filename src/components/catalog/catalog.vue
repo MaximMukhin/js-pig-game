@@ -5,9 +5,14 @@
       </router-link>
 
       <h1>Каталог</h1>
+      <selects 
+      :selected="selected"
+      :options="colors"
+      @select="sortByColors"
+      />
       <div class="catalog__list">
       <catalog-item
-         v-for="product in PRODUCTS"
+         v-for="product in filteredProduct"
          :key="product.article"
          :productData="product"
          @addToCart="addToCart"
@@ -19,17 +24,25 @@
 </template>
 <script>
 import catalogItem from './catalog-item'
-import{mapActions, mapGetters} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
+import selects from '../select'
 
 export default {
    name: 'catalog',
    components: {
       catalogItem,
+      selects,
    },
    props: {},
    data() {
       return {
-
+         colors: [
+            {name: 'Все', value: 'colorAll'},
+            {name: 'Белый глянец', value: 'colorWhide'},
+            {name: 'Красный глянец', value: 'colorRed'},
+         ],
+         selected: 'Все',
+         sortedProducts: [],
       }
    },
    computed: {
@@ -37,17 +50,38 @@ export default {
          'PRODUCTS',
          'CART',
       ]),
+
+      filteredProduct() {
+         if (this.sortedProducts.length) {
+            return this.sortedProducts
+         } else {
+            return this.PRODUCTS
+         }
+      },
    },
    methods:{
       ...mapActions([
          'GET_PRODUCTS_FROM_API',
          'ADD_TO_CART',
       ]),
+
       addToCart(data) {
          this.ADD_TO_CART(data)
       },
+
       showArticleChild(data) {
          console.log('Добавлена в корзину',data)
+      },
+
+      sortByColors(color) {
+         this.sortedProducts = []
+         let vm = this
+         this.PRODUCTS.map(function (item) {
+            if (item.color === color.name) {
+               vm.sortedProducts.push(item)
+            }
+         }),
+         this.selected = color.name
       }
    },
    mounted() {
@@ -58,7 +92,7 @@ export default {
 
 <style>
 .catalog {
-   font-size: 20px;
+   font-size: 12px;
    font-weight: 600;
 }
 
@@ -72,6 +106,8 @@ h1 {
       align-items: center;
 }
 .catalog__link-to-cart {
+   font-size: 12px;
+   font-weight: 600;
    position: absolute;
    top: 20px;
    right: 20px;

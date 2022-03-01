@@ -44,19 +44,21 @@ export default {
 
 <style>
 .catalog-item {
-   flex-basis: 25%;
+   font-size: 12px;
+   flex-basis: 24%;
    box-shadow: 0 0 8px 0 #a1a1a1;
    border-radius: 5px;
    padding: 8px;
    margin-bottom: 8px;
 }
 .catalog-item__image {
-   max-width: 250px;
+   max-width: 200px;
+   border-radius: 5px;
 }
 .catalog-item__add-to-card-btn {
   display: inline-block;
   font-family: arial,sans-serif;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   color: rgb(68,68,68);
   text-decoration: none;
