@@ -12,7 +12,7 @@
 
 <script>
 export default {
-   name: 'catalog-item',
+   name: 'CatalogItem',
    components: {},
    props: {
       productData: {

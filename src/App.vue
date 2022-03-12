@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-      <main-wrapper />
+  <div class="app">
+      <MainWrapper />
   </div>
 </template>
 
 <script>
-import mainWrapper from './components/main-wrapper'
+import MainWrapper from './components/MainWrapper'
 
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    mainWrapper,
+    MainWrapper,
   }
 }
 </script>
@@ -19,7 +19,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-#app {
+.app {
   font-weight: normal;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;

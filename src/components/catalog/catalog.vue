@@ -1,11 +1,11 @@
 <template>
    <div class="catalog">
-      <router-link :to="{name: 'cart', params: {cartData: CART}}">
+      <router-link :to="{name: 'Cart', params: {cartData: CART}}">
          <div class="catalog__link-to-cart">Корзина: {{CART.length}}</div>
       </router-link>
 
       <h1>Каталог</h1>
-      <selects 
+      <Select
       :selected="selected"
       :options="colors"
       @select="sortByColors"
@@ -23,15 +23,15 @@
    </div>
 </template>
 <script>
-import catalogItem from './catalog-item'
+import CatalogItem from './CatalogItem'
 import {mapActions, mapGetters} from 'vuex'
-import selects from '../select'
+import Select from '../Select'
 
 export default {
-   name: 'catalog',
+   name: 'Catalog',
    components: {
-      catalogItem,
-      selects,
+      CatalogItem,
+      Select,
    },
    props: {},
    data() {

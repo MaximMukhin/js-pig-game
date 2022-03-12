@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import catalog from '../components/catalog/catalog'
-import cart from '../components/cart/cart'
+import Catalog from '../components/catalog/Catalog'
+import Cart from '../components/cart/Cart'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'catalog',
-    component: catalog,
+    name: 'Catalog',
+    component: Catalog,
   },
   {
     path: '/cart',
-    name: 'cart',
-    component: cart,
+    name: 'Cart',
+    component: Cart,
     props: true
   },
 ]

@@ -22,7 +22,7 @@
 
 <script>
 export default {
-   name: 'cart-item',
+   name: 'CartItem',
    props: {
       cartItemData: {
          type: Object,

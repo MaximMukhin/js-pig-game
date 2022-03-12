@@ -1,6 +1,6 @@
 <template>
    <div class="cart">
-      <router-link :to="{name: 'catalog'}">
+      <router-link :to="{name: 'Catalog'}">
          <div class="catalog__link-to-cart">Вернуться в каталог</div>
       </router-link>
       <p v-if="!cartData.length">Корзина пуста</p>
@@ -20,13 +20,13 @@
    </div>
 </template>
 <script>
-import cartItem from './cart-item'
+import CartItem from './CartItem'
 import{mapActions} from 'vuex'
 
 export default {
-   name: 'cart',
+   name: 'Cart',
    components: {
-      cartItem
+      CartItem
    },
    props: {
       cartData: {

@@ -21,7 +21,7 @@
 
 <script>
    export default {
-      name: "select",
+      name: "Select",
       props: {
          options: {
             type: Array,

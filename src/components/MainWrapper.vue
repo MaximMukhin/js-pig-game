@@ -12,7 +12,7 @@
 import{mapGetters} from 'vuex'
 
 export default {
-   name: 'main-wrapper',
+   name: 'MainWrapper',
    props:{},
    data(){
       return {
@@ -35,7 +35,7 @@ export default {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   max-width: 1280;
+   max-width: 1024px;
    margin: 0 auto;
    font-size: 20px;
    color: rgb(48, 48, 48);
