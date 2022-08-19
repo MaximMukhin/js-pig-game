@@ -4,12 +4,15 @@
          <div class="catalog__link-to-cart">Корзина: {{CART.length}}</div>
       </router-link>
 
-      <h1>Каталог</h1>
+   <div class="catalog__select">
+      <h2>Каталог</h2>
       <Select
       :selected="selected"
       :options="colors"
       @select="sortByColors"
       />
+   </div>
+
       <div class="catalog__list">
       <catalog-item
          v-for="product in filteredProduct"
@@ -17,7 +20,7 @@
          :productData="product"
          @addToCart="addToCart"
          @articleChild="showArticleChild"
-       />
+      />
       </div>
 
    </div>
@@ -99,11 +102,13 @@ export default {
 h1 {
    margin: 10px;
 }
+
 .catalog__list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 10px;
 }
 .catalog__link-to-cart {
    font-size: 12px;

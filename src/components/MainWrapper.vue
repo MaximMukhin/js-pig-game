@@ -1,6 +1,6 @@
 <template>
    <div class="main-wrapper">
-      <p>{{titel}}</p>
+      <h7>{{titel}}</h7>
       <keep-alive>
          <router-view></router-view>
       </keep-alive>
@@ -39,6 +39,7 @@ export default {
    margin: 0 auto;
    font-size: 20px;
    color: rgb(48, 48, 48);
+   background-color: rgb(240, 240, 240);
 }
 
 p {
