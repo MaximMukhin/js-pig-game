@@ -1,4 +1,4 @@
-# acqua-craft-store-vue2
+# vue2-acqua-craft-store
 
 ## Project setup
 ```
