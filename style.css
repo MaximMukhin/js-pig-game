@@ -1,0 +1,17 @@
+.title-h1 {
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(245, 241, 235);
+  border-radius: 8px;
+  border: 1px solid gray;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: rgb(212, 222, 203);
+}
