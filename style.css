@@ -18,7 +18,6 @@ body {
   height: 50px;
   background-color: rgb(245, 241, 235);
   border-radius: 8px;
-  border: 1px solid gray;
   transition: all 0.3s;
 }
 
