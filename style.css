@@ -1,8 +1,18 @@
+body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center
+}
 .title-h1 {
   text-align: center;
 }
 
 .btn {
+
   cursor: pointer;
   width: 200px;
   height: 50px;
@@ -17,7 +27,7 @@
 }
 .btn:active {
   transition: all 0.2s;
-  background-color: rgb(69, 255, 72);
+  background-color: rgb(66, 180, 67);
   box-shadow: 5px;
 }
 
@@ -25,6 +35,36 @@
   display: none;
 }
 
+.show-modal-window {
+  margin: 0 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.close-modal-window {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #444;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: #fff;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
 .overlay {
   position: absolute;
   top: 0;
