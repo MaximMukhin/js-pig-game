@@ -6,11 +6,15 @@ const btnCloseModalWindowElement = document.querySelector(
   ".close-modal-window"
 );
 
-console.log(modalWindowElement);
-console.log(overlayElement);
-console.log(btnsShowModalWindowElement);
-console.log(btnCloseModalWindowElement );
-
 for (let i = 0; i < btnsShowModalWindowElement.length; i++) {
-  btnsShowModalWindowElement[i].addEventListener("click", () => {});
+  btnsShowModalWindowElement[i].addEventListener("click", () => {
+    console.log(btnsShowModalWindowElement[i].textContent);
+    modalWindowElement.classList.remove("hidden");
+    overlayElement.classList.remove("hidden");
+  });
 }
+
+btnCloseModalWindowElement.addEventListener("click", () => {
+  modalWindowElement.classList.add("hidden");
+  overlayElement.classList.add("hidden");
+});
