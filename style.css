@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #000;
-  background-image: linear-gradient(to top right, #e2b810 0%, #ec3b05 100%);
+  background-image: linear-gradient(to top right, #8e8c86 0%, #ebdfdb 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@ main {
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: #ee7d05;
+  color: #d78329;
   margin-bottom: auto;
 }
 
@@ -76,7 +76,7 @@ main {
 }
 
 .current {
-  background-color: #ee7d05;
+  background-color: #da9143;
   opacity: 0.8;
   border-radius: 9px;
   color: #fff;
@@ -161,4 +161,8 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #d50b0b;
+}
+
+.hidden {
+  display: none;
 }
