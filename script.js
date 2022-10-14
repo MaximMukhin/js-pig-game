@@ -53,6 +53,7 @@ btnNewGameElement.addEventListener("click", () => {
   document.getElementById(`current--${activePlayer}`).textContent =
     currentScore;
   activePlayer = 0;
+  diceElement.classList.add("hidden");
   playerOneElement.classList.add("player--active");
   playerTwoElement.classList.remove("player--active");
   console.log("NewGame");
