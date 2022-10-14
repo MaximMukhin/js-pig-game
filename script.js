@@ -49,6 +49,12 @@ btnRollTheDiceElement.addEventListener("click", rollTheDice);
 btnTakeScoreElement.addEventListener("click", () => {});
 
 btnNewGameElement.addEventListener("click", () => {
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  activePlayer = 0;
+  playerOneElement.classList.add("player--active");
+  playerTwoElement.classList.remove("player--active");
   console.log("NewGame");
 });
 
