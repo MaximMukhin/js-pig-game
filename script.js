@@ -11,7 +11,7 @@ const currentScorePlayerTwoElement = document.getElementById("current--1");
 const playerOneElement = document.querySelector(".player--0");
 const playerTwoElement = document.querySelector(".player--1");
 
-const totalScore = [0, 0];
+let totalScore = [0, 0];
 // let scorePlayerOne = 0;
 // let scorePlayerTwo = 0;
 
@@ -56,6 +56,9 @@ btnNewGameElement.addEventListener("click", () => {
   diceElement.classList.add("hidden");
   playerOneElement.classList.add("player--active");
   playerTwoElement.classList.remove("player--active");
+  totalScore = [0, 0];
+  scorePlayerOneElement.textContent = totalScore[0];
+  scorePlayerTwoElement.textContent = totalScore[1];
   console.log("NewGame");
 });
 
