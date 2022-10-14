@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 
-/* Layout */
+
 main {
   max-width: 900px;
     min-height: 250px;
@@ -42,7 +42,7 @@ main {
   transition: all 0.75s;
 }
 
-/* Elements */
+
 .name {
   position: relative;
   font-size: 4rem;
@@ -110,7 +110,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
-/* ABSOLUTE POSITIONED ELEMENTS */
+
 .btn {
   color: #444;
   background: none;
@@ -139,7 +139,6 @@ main {
 }
 
 .btn--new {
-  margin-top: ;
   margin-bottom: 16px;
 }
 .btn--roll {
