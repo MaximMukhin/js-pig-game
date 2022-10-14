@@ -24,7 +24,7 @@ body {
 main {
   max-width: 900px;
     min-height: 250px;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(200px);
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
@@ -102,7 +102,7 @@ main {
   justify-content: space-between;
   align-items: center;
   min-width: 200px;
-  background-color: #8e8c86;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-flex {
@@ -126,10 +126,10 @@ main {
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
 
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
+  padding: 8px;
+    border-radius: 8px;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-  margin-bottom: 32px;
+
 }
 
 .btn::first-letter {
@@ -138,17 +138,18 @@ main {
   margin-right: 0.7rem;
 }
 
-/* .btn--new {
-  top: 3rem;
+.btn--new {
+  margin-top: ;
+  margin-bottom: 16px;
 }
 .btn--roll {
-  top: 40rem;
+margin-bottom: 16px;
 }
 .btn--hold {
-  top: 46rem;
+margin-bottom: 32px;
 }
 
-*/
+
 .btn:active {
   transform: translate(-1%, 1px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -159,7 +160,7 @@ main {
 }
 
 .dice {
-  margin-top: 16px;
+  margin-top: 32px;
     max-width: 100px;
 }
 
