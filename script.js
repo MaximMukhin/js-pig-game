@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const scorePlayerOneElement = document.getElementById("score--0");
 const scorePlayerTwoElement = document.getElementById("score--1");
@@ -12,18 +12,23 @@ const playerOneElement = document.querySelector(".player--0");
 const playerTwoElement = document.querySelector(".player--1");
 
 const totalScore = [0, 0];
-// let scorePlayerOne = 0;
-// let scorePlayerTwo = 0;
 
 let currentScore = 0;
 let activePlayer = 0;
-// let currentScorePlayerOne = 0;
-// let currentScorePlayerTwo = 0;
 
 scorePlayerOneElement.textContent = totalScore[0];
 scorePlayerTwoElement.textContent = totalScore[1];
 
 diceElement.classList.add("hidden");
+
+const switchPlayer = () => {
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  playerOneElement.classList.toggle("player--active");
+  playerTwoElement.classList.toggle("player--active");
+};
 
 const rollTheDice = () => {
   const diceRandomNum = Math.trunc(Math.random() * 6 + 1);
@@ -35,12 +40,7 @@ const rollTheDice = () => {
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
-    currentScore = 0;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    playerOneElement.classList.toggle("player--active");
-    playerTwoElement.classList.toggle("player--active");
+    switchPlayer();
   }
 };
 
@@ -52,6 +52,8 @@ btnNewGameElement.addEventListener("click", () => {
     currentScore;
   activePlayer = 0;
   diceElement.classList.add("hidden");
+  playerOneElement.classList.remove("player--winner");
+  playerTwoElement.classList.remove("player--winner");
   playerOneElement.classList.add("player--active");
   playerTwoElement.classList.remove("player--active");
   totalScore[0] = 0;
@@ -59,24 +61,49 @@ btnNewGameElement.addEventListener("click", () => {
 
   scorePlayerOneElement.textContent = totalScore[0];
   scorePlayerTwoElement.textContent = totalScore[1];
+
+  btnRollTheDiceElement.removeAttribute("disabled");
+  btnTakeScoreElement.removeAttribute("disabled");
+
   console.log("NewGame");
   console.log(totalScore);
 });
 
 btnTakeScoreElement.addEventListener("click", () => {
-  totalScore[activePlayer] += document.getElementById(
-    `current--${activePlayer}`
-  ).textContent = currentScore;
-
+  totalScore[activePlayer] += currentScore;
   document.querySelector(`#score--${activePlayer}`).textContent =
     totalScore[activePlayer];
 
-  console.log(totalScore);
+  if (totalScore[activePlayer] >= 0) {
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove("player--active");
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add("player--winner");
 
-  currentScore = 0;
-  document.getElementById(`current--${activePlayer}`).textContent =
-    currentScore;
-  activePlayer = activePlayer === 0 ? 1 : 0;
-  playerOneElement.classList.toggle("player--active");
-  playerTwoElement.classList.toggle("player--active");
+    btnRollTheDiceElement.setAttribute("disabled", true);
+    btnTakeScoreElement.setAttribute("disabled", true);
+    diceElement.classList.add("hidden");
+    showModalWindow();
+  } else {
+    switchPlayer();
+  }
 });
+
+const modalWindowElement = document.querySelector(".modal-window");
+const overlayElement = document.querySelector(".overlay");
+
+const showModalWindow = () => {
+  modalWindowElement.classList.remove("hidden-overlay");
+  overlayElement.classList.remove("hidden-overlay");
+};
+
+const btnCloseModalWindowElement = document.querySelector(
+  ".close-modal-window"
+);
+
+const closeModalWindow = () => {
+  modalWindowElement.classList.add("hidden-overlay");
+  overlayElement.classList.add("hidden-overlay");
+};
