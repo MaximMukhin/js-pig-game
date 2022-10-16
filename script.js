@@ -76,7 +76,7 @@ btnTakeScoreElement.addEventListener("click", () => {
   document.querySelector(`#score--${activePlayer}`).textContent =
     totalScore[activePlayer];
 
-  if (totalScore[activePlayer] >= 200) {
+  if (totalScore[activePlayer] >= 0) {
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.remove("player--active");

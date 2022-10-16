@@ -204,12 +204,15 @@ background-color: rgba(100, 100, 100, 0.4);
 .winner-text {
   font-size: 28px;
   font-weight: 900;
+  text-align: center;
 }
 
 .player1-score,
 .player2-score {
   font-size: 24px;
+  text-align: center;
 }
+
 .winner-window {
   display: flex;
   flex-direction: column;
@@ -242,12 +245,14 @@ background-color: rgba(100, 100, 100, 0.4);
 }
 @media (max-width: 680px) {
   main {
+    display: flex;
     flex-direction: column;
   }
 
   body {
     margin: 0 8px 0 8px;
     align-items: stretch;
+    height: none;
   }
 
   .info {
@@ -256,4 +261,65 @@ background-color: rgba(100, 100, 100, 0.4);
     font-size: 14px;
     text-align: center;
   }
+.player {
+  padding: 10px 20px;
+}
+
+.name {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.score {
+  font-size: 30px;
+}
+
+.current {
+  padding: 0;
+}
+
+.current-score {
+  font-size: 20px;
+}
+
+.current-label {
+  margin-bottom: 0;
+}
+
+.btn {
+  padding: 4px;
+}
+
+.winner-text {
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.player1-score,
+.player2-score {
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn--new {
+  margin-bottom: 8px;
+}
+
+.btn--roll {
+  margin-bottom: 8px;
+}
+
+.btn--hold {
+  margin-bottom: 8px;
+}
+
+.dice-wrapper {
+  height: 90px;
+}
+
+.dice {
+  margin-top: 12px;
+  max-width: 70px;
+}
 }
