@@ -148,7 +148,7 @@ main {
 }
 
 .btn--new {
-  margin-bottom: 16px;
+  margin-top: 20px;
 }
 .btn--roll {
 margin-bottom: 16px;
@@ -303,7 +303,8 @@ background-color: rgba(100, 100, 100, 0.4);
 }
 
 .btn--new {
-  margin-bottom: 8px;
+  margin-top: 8px;
+    margin-bottom: 0;
 }
 
 .btn--roll {
