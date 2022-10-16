@@ -14,10 +14,11 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #000;
-  background-image: linear-gradient(to top right, #8e8c86 0%, #ebdfdb 100%);
+  background-image: linear-gradient(to top right, #6c6c6b 0%, #a3a09e 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column
 }
 
 
@@ -33,6 +34,11 @@ main {
   display: flex;
 }
 
+.info {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  margin-left: 8px;
+}
 .player {
   flex: 50%;
   padding: 20px 40px;
@@ -115,6 +121,7 @@ main {
 }
 
 .btn {
+  user-select: none;
   color: #444;
   background: none;
   border: none;
@@ -125,7 +132,6 @@ main {
   font-weight: 400;
   transition: all 0.2s;
 
-  background-color: #fff;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
 
@@ -138,7 +144,7 @@ main {
 .btn::first-letter {
   font-size: 2.4rem;
   display: inline-block;
-  margin-right: 0.7rem;
+/*   margin-right: 0.7rem; */
 }
 
 .btn--new {
@@ -148,7 +154,7 @@ main {
 margin-bottom: 16px;
 }
 .btn--hold {
-margin-bottom: 32px;
+margin-bottom: 20px;
 }
 
 
@@ -167,7 +173,7 @@ margin-bottom: 32px;
 }
 
 .player--winner {
-  background-color: #31c410;
+  background-color: rgba(0, 0, 0, 0.1)
 }
 
 .player--winner .name {
@@ -187,13 +193,23 @@ margin-bottom: 32px;
   max-width: 800px;
   font-size: medium;
 
-  background-color: #fff;
+background-color: rgba(100, 100, 100, 0.4);
+  backdrop-filter: blur(20px);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 
+.winner-text {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.player1-score,
+.player2-score {
+  font-size: 24px;
+}
 .winner-window {
   display: flex;
   flex-direction: column;
@@ -201,14 +217,13 @@ margin-bottom: 32px;
 }
 
 .close-modal-window {
-  /*   position: absolute; */
   top: 100px;
   right: 100px;
-  font-size: 24px;
-  color: #444;
+  font-size: 20px;
+    color: rgb(221, 221, 221);
+    background-color: rgba(45, 45, 45, 0.671);
   cursor: pointer;
   border: none;
-  background: none;
 }
 
 .overlay {
@@ -217,11 +232,28 @@ margin-bottom: 32px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(98, 97, 97, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
   z-index: 5;
 }
 
 .hidden-overlay {
   display: none;
+}
+@media (max-width: 680px) {
+  main {
+    flex-direction: column;
+  }
+
+  body {
+    margin: 0 8px 0 8px;
+    align-items: stretch;
+  }
+
+  .info {
+    margin: 0 auto;
+    max-width: 220px;
+    font-size: 14px;
+    text-align: center;
+  }
 }

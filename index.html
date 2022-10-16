@@ -23,9 +23,9 @@
           <img src="dice1.png" alt="Playing dice" class="dice" />
         </div>
         <div class="btn-flex">
-          <button class="btn btn--new">🐷<br>Новая игра</button>
-          <button class="btn btn--roll">🎲<br>Бросить кубик</button>
-          <button class="btn btn--hold">👌<br>Оставить</button>
+          <button class="btn btn--new">🐷Новая игра</button>
+          <button class="btn btn--roll">🎲Бросить кубик</button>
+          <button class="btn btn--hold">👌Оставить</button>
         </div>
       </section>
 
@@ -40,15 +40,19 @@
 
       <div class="modal-window hidden-overlay">
         <div class="winner-window">
-          <h2>Игрок под номером + выиграл!!!</h2>
+          <div class="winner-text">Игрок под номером + выиграл!!!</div>
           <br>
-          <button class="close-modal-window">Новая игра</button>
+          <div class="player1-score"></div>
+          <div class="player2-score"></div>
+          <br>
+          <button class="btn close-modal-window">🐷 Новая игра</button>
         </div>
-
       </div>
       <div class="overlay hidden-overlay"></div>
 
     </main>
+    <br>
+    <div class="info">Игра в свинью, набери больше 200 очков и выиграй!</div>
     <script src="script.js"></script>
   </body>
 </html>
